@@ -1,7 +1,7 @@
 # Trabalho de Sistemas Operacionais
 # Trabalho Prático 2
 
-##Prof. Miguel Gomes Xavier
+## Prof. Miguel Gomes Xavier
 
 ### Roteiro
 ### Objetivos
@@ -9,7 +9,7 @@
 2. Praticar técnicas de sincronização de processos.
 3. Estudar soluções para o problema clássico do jantar dos filósofos.
 
-###### Jantar para N filósofos
+##### Jantar para N filósofos
 Este trabalho prático consiste na implementação de uma aplicação multithreading capaz de
 modelar o problema do jantar dos filósofos para N filósofos.
 
@@ -31,7 +31,7 @@ os seguintes itens:
 - Quantas vezes cada filósofo pensou;
 - Quantas vezes cada filósofo entrou no estado TENTANDO_COMER.
 
-###### Entrega
+##### Entrega
 O trabalho pode ser realizado com no máximo 3 alunos. Junto com a implementação, deve ser
 entregue um relatório de no máximo 3 páginas explicando detalhes da implementação. A
 entrega do trabalho deve ser realizada pelo Moodle e o mesmo deve ser apresentado em sala
