@@ -4,78 +4,101 @@ import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class Philosopher implements Runnable {
-    private Semaphore hashi1;
-    private Semaphore hashi2;
-    private Semaphore hashi3;
-    private Semaphore hashi4;
-    private Semaphore hashi5;
+    private Stats stats;
+    private Semaphore forks[];
+    private long dinnerTime = 0;
 
-    private static final int numberPhilosofers = 5;
+    private static int numberPhilosofers;
 
-    public Philosopher (Semaphore hashi1, Semaphore hashi2, Semaphore hashi3, Semaphore hashi4, Semaphore hashi5) {
-        this.hashi1 = hashi1;
-        this.hashi2 = hashi2;
-        this.hashi3 = hashi3;
-        this.hashi4 = hashi4;
-        this.hashi5 = hashi5;
+    public Philosopher (Semaphore forks[], int numberPhilosofers, String name, Stats stats, long dinnerTime) {
+        this.forks = forks;
+        Philosopher.numberPhilosofers = numberPhilosofers;
+        this.dinnerTime = dinnerTime;
+        this.stats = stats;
+        this.stats = new Stats(name);
     }
 
     private void think() {
         try {
-            System.out.println("I am thinking!");
+            System.out.println(stats.getName() + " is thinking!");
             Thread.sleep(2500);
-            System.out.println("Still thinking...");
+            System.out.println(stats.getName() + " still thinking...");
             Thread.sleep(2500);
-            System.out.println("I thought!");
+            System.out.println(stats.getName() + " thought!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        stats.sumTimesThought();
     }
 
     private void eat() {
         try {
-            System.out.println("I am eating!");
+            System.out.println(stats.getName() + " is eating!");
             Thread.sleep(1000);
-            System.out.println("Still eating...");
+            System.out.println(stats.getName() + " still eating...");
             Thread.sleep(1000);
-            System.out.println("I ate!");
+            System.out.println(stats.getName() + " ate!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        stats.sumTimesAte();
     }
 
-    private void tryingToEat(){
+    private void tryingToEat(int fork){
         Random random = new Random();
         int randomTime = 0;
-        long randomSplitedTime = 0;
+        int time = 0;
 
         randomTime = random.nextInt(3);
-        randomSplitedTime = randomTime/2;
 
         try {
-            System.out.println("I trying to eat!");
-            Thread.sleep(randomSplitedTime);
-            System.out.println("Still trying...");
-            Thread.sleep(randomSplitedTime);
-            System.out.println("Tried to :c");
+            while (time < randomTime){
+                System.out.println(stats.getName() + " will try to eat!");
+                if (forks[(fork+1) % numberPhilosofers].tryAcquire()){
+                    forks[(fork+1) % numberPhilosofers].release();
+                    forks[(fork+1) % numberPhilosofers].acquire();
+                    eat();
+                    forks[(fork+1) % numberPhilosofers].release();
+                    break;
+                }
+                else {
+                    System.out.println(stats.getName() + " still trying...");
+                    time++;
+                }
+
+                if (time == randomTime)
+                    System.out.println(stats.getName() + " could not eat :c");
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        stats.sumTimesTriedEating();
     }
 
-    private void takeHashi(int n) {
-
+    private void takeFork(int fork) {
+        if (forks[fork].tryAcquire()){
+            forks[fork].release();
+            try {
+                forks[fork].acquire();
+                tryingToEat(fork);
+                forks[fork].release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void run() {
         Random random = new Random();
-        int hashi = random.nextInt(numberPhilosofers);
+        int fork = random.nextInt(numberPhilosofers);
 
         while (true){
-
             think();
-            takeHashi(hashi);
+            takeFork(fork);
         }
     }
 }

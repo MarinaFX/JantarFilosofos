@@ -1,43 +1,57 @@
 package Application;
 
 import Filosofos.Philosopher;
+import Filosofos.Stats;
 
 import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
 public class App {
     private static final int MAX_THREADS = 1;
-    private static final Semaphore hashi1 = new Semaphore(MAX_THREADS, true);
-    private static final Semaphore hashi2 = new Semaphore(MAX_THREADS, true);
-    private static final Semaphore hashi3 = new Semaphore(MAX_THREADS, true);
-    private static final Semaphore hashi4 = new Semaphore(MAX_THREADS, true);
-    private static final Semaphore hashi5 = new Semaphore(MAX_THREADS, true);
+    /*private static final Semaphore fork1 = new Semaphore(MAX_THREADS, true);
+    private static final Semaphore fork2 = new Semaphore(MAX_THREADS, true);
+    private static final Semaphore fork3 = new Semaphore(MAX_THREADS, true);
+    private static final Semaphore fork4 = new Semaphore(MAX_THREADS, true);
+    private static final Semaphore fork5 = new Semaphore(MAX_THREADS, true);*/
+
+    private static Semaphore forks[];
+    private static Thread philosofers[];
+    private static Stats stats[];
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Thread philosopher1 = new Thread(new Philosopher(hashi1, hashi2, hashi3, hashi4, hashi5));
-        Thread philosopher2 = new Thread(new Philosopher(hashi1, hashi2, hashi3, hashi4, hashi5));
-
-        /*Thread philosopher3 = new Thread(new Philosopher(hashi1, hashi2, hashi3, hashi4, hashi5));
-        Thread philosopher4 = new Thread(new Philosopher(hashi1, hashi2, hashi3, hashi4, hashi5));
-        Thread philosopher5 = new Thread(new Philosopher(hashi1, hashi2, hashi3, hashi4, hashi5));
-        */
 
         System.out.println("Olá, bem vindo ao jantar dos filosofos");
         System.out.println("Quantos filosofos você deseja na mesa?");
-        int numberPhilosofer = in.nextInt();
+        int numberPhilosofers = in.nextInt();
         System.out.println("Ótimo! e por quanto tempo esse jantar deve durar?");
         System.out.println("Insira o tempo em segundos por favor. Ex: 240 (4 minutos)");
         long dinnerTime = in.nextInt();
 
+        forks = new Semaphore[numberPhilosofers];
+        philosofers = new Thread[numberPhilosofers];
+        stats = new Stats[numberPhilosofers];
 
-        philosopher1.start();
-        philosopher2.start();
+        for (int i = 0 ; i < forks.length ; i++){
+            forks[i] = new Semaphore(MAX_THREADS, true);
+        }
+
+        for (int i = 0 ; i < forks.length ; i++){
+            stats[i] = new Stats();
+            philosofers[i] = new Thread(new Philosopher(forks, numberPhilosofers, "Fisolofo " + i, stats[i], dinnerTime));
+        }
+
+        for (int i = 0 ; i < forks.length ; i++){
+            philosofers[i].start();
+        }
+
 
         try {
             Thread.sleep(dinnerTime);
-            philosopher1.join();
-            philosopher2.join();
+            for (int i = 0 ; i < forks.length ; i++){
+                philosofers[i].join();
+                stats[i].actionsReport();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
