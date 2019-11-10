@@ -15,7 +15,7 @@ public class Philosopher implements Runnable {
         Philosopher.numberPhilosofers = numberPhilosofers;
         this.dinnerTime = dinnerTime;
         this.stats = stats;
-        this.stats = new Stats(name);
+        stats.setName(name);
     }
 
     private void think() {
@@ -46,6 +46,19 @@ public class Philosopher implements Runnable {
         stats.sumTimesAte();
     }
 
+    private void takeFork(int fork) {
+        if (forks[fork].tryAcquire()){
+            forks[fork].release();
+            try {
+                forks[fork].acquire();
+                tryingToEat(fork);
+                forks[fork].release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void tryingToEat(int fork){
         Random random = new Random();
         int randomTime = 0;
@@ -70,6 +83,7 @@ public class Philosopher implements Runnable {
 
                 if (time == randomTime)
                     System.out.println(stats.getName() + " could not eat :c");
+                    Thread.sleep(randomTime);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -78,27 +92,22 @@ public class Philosopher implements Runnable {
         stats.sumTimesTriedEating();
     }
 
-    private void takeFork(int fork) {
-        if (forks[fork].tryAcquire()){
-            forks[fork].release();
-            try {
-                forks[fork].acquire();
-                tryingToEat(fork);
-                forks[fork].release();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     @Override
     public void run() {
         Random random = new Random();
         int fork = random.nextInt(numberPhilosofers);
 
-        while (true){
+        long inicio = System.currentTimeMillis();
+        long fim;
+
+        while(true){
             think();
             takeFork(fork);
+
+            fim = System.currentTimeMillis();
+            if((fim-inicio)>(dinnerTime*1000)) {
+                break;
+            }
         }
     }
 }

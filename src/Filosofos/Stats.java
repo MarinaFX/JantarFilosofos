@@ -6,12 +6,8 @@ public class Stats {
     private int timesTriedEat = 0;
     private int timesThought = 0;
 
-    public Stats(String name) {
+    public void setName(String name) {
         this.name = name;
-    }
-
-    public Stats() {
-
     }
 
     public void sumTimesAte(){
@@ -27,23 +23,11 @@ public class Stats {
     }
 
     public void actionsReport(){
-        System.out.println("=========================");
-        System.out.println("| " + this.name + " ate " + timesAte + " times" + " |");
-        System.out.println("| " + this.name + " tried to eat " + timesTriedEat + " times" + " |");
-        System.out.println("| " + this.name + " thought " + timesThought+ " times" + " |");
-        System.out.println("=========================");
-    }
-
-    public int getTimesAte() {
-        return timesAte;
-    }
-
-    public int getTimesTriedEat() {
-        return timesTriedEat;
-    }
-
-    public int getTimesThought() {
-        return timesThought;
+        System.out.println("====================================");
+        System.out.println("| " + name + " ate " + timesAte + " times" + "           |");
+        System.out.println("| " + name + " tried to eat " + timesTriedEat + " times" + "  |");
+        System.out.println("| " + name + " thought " + timesThought+ " times" + "       |");
+        System.out.println("====================================");
     }
 
     public String getName() {
