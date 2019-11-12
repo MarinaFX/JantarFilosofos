@@ -4,7 +4,6 @@
     <list default="true" id="8bd984db-07e2-4564-b4c6-5155b9973c9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T2/Application/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T2/Application/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T2/Filosofos/Philosopher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T2/Filosofos/Philosopher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T2/Filosofos/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T2/Filosofos/Stats.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/App.java" afterDir="false" />
@@ -18,59 +17,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="952469301">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="3382" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="3382" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="2001268687">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="771" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="616">
+              <caret line="48" column="126" selection-start-line="48" selection-start-column="126" selection-end-line="48" selection-end-column="126" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Filosofos/Philosopher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="1496">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,20 +46,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Filosofos/Stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="198">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="35" />
               <folding>
-                <element signature="e#203#204#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
+                <element signature="e#1003#1004#0" expanded="true" />
+                <element signature="e#915#916#0" expanded="true" />
+                <element signature="e#942#943#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="198">
+                <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -137,17 +96,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Filosofos/Filosofo.java" />
-        <option value="$PROJECT_DIR$/src/Filosofos/Philosopher.java" />
-        <option value="$PROJECT_DIR$/src/Filosofos/Stats.java" />
         <option value="$PROJECT_DIR$/src/Application/App.java" />
+        <option value="$PROJECT_DIR$/src/Filosofos/Stats.java" />
+        <option value="$PROJECT_DIR$/src/Filosofos/Philosopher.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -161,7 +114,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,17 +121,35 @@
               <item name="Jantar_Filosofos" type="b2602c69:ProjectViewProjectNode" />
               <item name="JantarFilosofos" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Jantar_Filosofos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JantarFilosofos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Jantar_Filosofos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JantarFilosofos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Jantar_Filosofos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JantarFilosofos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Filosofos" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573402156858" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573602443737" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -230,17 +200,20 @@
       <workItem from="1570990557647" duration="1132000" />
       <workItem from="1572175373830" duration="4061000" />
       <workItem from="1573394534321" duration="7037000" />
+      <workItem from="1573506247900" duration="582000" />
+      <workItem from="1573521019373" duration="579000" />
+      <workItem from="1573598375717" duration="4049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12230000" />
+    <option name="totallyTimeSpent" value="17440000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12632374" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13187702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -250,8 +223,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="456" y="301" width="454" height="126" id="Run" order="2" weight="0.6557377" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.71311474" />
+      <window_info anchor="bottom" x="456" y="301" width="454" height="126" id="Run" maximized="true" order="2" type="WINDOWED" weight="0.48212227" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.64590544" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -260,6 +233,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,13 +243,11 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" />
@@ -294,37 +266,41 @@
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/Filosofos/Stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="198">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="35" />
           <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filosofos/Philosopher.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="198">
+            <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="616">
+          <caret line="48" column="126" selection-start-line="48" selection-start-column="126" selection-end-line="48" selection-end-column="126" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/App.java">
+    <entry file="file://$PROJECT_DIR$/src/Filosofos/Philosopher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="1496">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

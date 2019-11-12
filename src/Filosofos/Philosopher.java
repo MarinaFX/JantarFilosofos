@@ -8,23 +8,23 @@ public class Philosopher implements Runnable {
     private Semaphore forks[];
     private long dinnerTime = 0;
 
-    private static int numberPhilosofers;
+    private int numberPhilosofers;
 
-    public Philosopher (Semaphore forks[], int numberPhilosofers, String name, Stats stats, long dinnerTime) {
+    public Philosopher (Semaphore forks[], int numberPhilosofers, String name, Stats stats, long dinnerTime, int number) {
         this.forks = forks;
-        Philosopher.numberPhilosofers = numberPhilosofers;
+        this.numberPhilosofers = numberPhilosofers;
         this.dinnerTime = dinnerTime;
         this.stats = stats;
-        stats.setName(name);
+        stats.setName(name, number);
     }
 
     private void think() {
         try {
-            System.out.println(stats.getName() + " is thinking!");
+            System.out.println(stats.getName() + " está pensando!");
             Thread.sleep(2500);
-            System.out.println(stats.getName() + " still thinking...");
+            System.out.println(stats.getName() + " ainda está pensando...");
             Thread.sleep(2500);
-            System.out.println(stats.getName() + " thought!");
+            System.out.println(stats.getName() + " pensou!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -34,11 +34,11 @@ public class Philosopher implements Runnable {
 
     private void eat() {
         try {
-            System.out.println(stats.getName() + " is eating!");
+            System.out.println(stats.getName() + " está comendo!");
             Thread.sleep(1000);
-            System.out.println(stats.getName() + " still eating...");
+            System.out.println(stats.getName() + " ainda está comendo...");
             Thread.sleep(1000);
-            System.out.println(stats.getName() + " ate!");
+            System.out.println(stats.getName() + " comeu!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -68,22 +68,24 @@ public class Philosopher implements Runnable {
 
         try {
             while (time < randomTime){
-                System.out.println(stats.getName() + " will try to eat!");
+                System.out.println(stats.getName() + " tentará comer!");
                 if (forks[(fork+1) % numberPhilosofers].tryAcquire()){
-                    forks[(fork+1) % numberPhilosofers].release();
+                   forks[(fork+1) % numberPhilosofers].release();
                     forks[(fork+1) % numberPhilosofers].acquire();
                     eat();
                     forks[(fork+1) % numberPhilosofers].release();
                     break;
                 }
                 else {
-                    System.out.println(stats.getName() + " still trying...");
+                    System.out.println(stats.getName() + " ainda tentando...");
                     time++;
+
                 }
 
-                if (time == randomTime)
-                    System.out.println(stats.getName() + " could not eat :c");
+                if (time == randomTime) {
+                    System.out.println(stats.getName() + " não conseguiu comer :c");
                     Thread.sleep(randomTime);
+                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -94,8 +96,7 @@ public class Philosopher implements Runnable {
 
     @Override
     public void run() {
-        Random random = new Random();
-        int fork = random.nextInt(numberPhilosofers);
+        int fork = stats.getNumber();
 
         long inicio = System.currentTimeMillis();
         long fim;

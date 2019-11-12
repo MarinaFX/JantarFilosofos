@@ -46,7 +46,7 @@ public class App {
 
         for (int i = 0 ; i < forks.length ; i++){
             stats[i] = new Stats();
-            philosofers[i] = new Thread(new Philosopher(forks, numberPhilosofers, "Filósofo " + (i+1), stats[i], dinnerTime));
+            philosofers[i] = new Thread(new Philosopher(forks, numberPhilosofers, "Filósofo " + (i+1), stats[i], dinnerTime, i));
         }
 
         for (int i = 0 ; i < forks.length ; i++){
